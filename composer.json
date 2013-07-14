@@ -1,0 +1,26 @@
+{
+    "name": "garyburge/yii-mailto",
+    "description": "A mailto link generator that includes email address obfucation.",
+    "keywords": [
+        "yii",
+        "extension",
+        "email"
+    ],
+    "homepage": "https://github.com/garyburge/yii-mailto",
+    "type": "yii-extension",
+    "license": "BSD-3-Clause",
+    "version": "dev-master",
+    "authors": [
+        {
+            "name": "Colin Fletcher",
+            "email": "cfletcher1856@gmail.com"
+        },
+        {
+            "name": "Gary Burge",
+            "email": "garyburge@garyburge.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.1.0"
+    }
+}
