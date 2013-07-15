@@ -90,6 +90,7 @@
 			self::$_link_text = (strlen($link_text)) ? $link_text : $email;
 			self::$_encoding = $encoding;
 			self::$_options = $options;
+            Yii::trace(__METHOD__ . " (" . __LINE__ . "): self::_options=".print_r(self::$_options, true), 'user');
 		}
 
 		/**
@@ -102,6 +103,7 @@
 			if(!empty(self::$_options)){
 				$emailOptions = "?";
 				foreach(self::$_options as $k => $v){
+                    Yii::trace(__METHOD__ . " (" . __LINE__ . "): $k => $v", 'user');
 					switch($k){
 						case 'cc':
 						case 'bcc':
