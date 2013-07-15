@@ -119,12 +119,13 @@
 						case 'id':
 						case 'name':
 						case 'title':
-							self::$_linkOptions .= $k . "=" . $v . " ";
+							self::$_linkOptions .= $k . "=" . '"'.$v.'"' . " ";
 							break;
 						default:
 					}
 				}
 				self::$_email .= rtrim($emailOptions, '&');
+                Yii::trace(__METHOD__ . " (" . __LINE__ . "): self::_linkOptions='".self::$_linkOptions."'", 'user');
                 Yii::trace(__METHOD__ . " (" . __LINE__ . "): self::_email='".self::$_email."'", 'user');
 			}
 		}
