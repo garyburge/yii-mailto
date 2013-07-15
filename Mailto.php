@@ -119,6 +119,7 @@
 						case 'id':
 						case 'name':
 						case 'title':
+                        case 'target':
 							self::$_linkOptions .= $k . "=" . '"'.$v.'"' . " ";
 							break;
 						default:
