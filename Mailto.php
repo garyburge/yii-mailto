@@ -135,13 +135,13 @@
 		private static function javascript(){
             $encoded = '';
 			$encode_me = "document.write('" . self::getPlainTextLink() . "');";
-            Yii::trace(__METHOD__ . " (" . __LINE__ . "): encode_me=".htmlentities($encode_me), 'user');
+            Yii::trace(__METHOD__ . " (" . __LINE__ . "): encode_me=".$encode_me, 'user');
 			$len = strlen($encode_me);
 
 			for($i=0; $i<$len; $i++){
 				$encoded .= "%" . bin2hex($encode_me[$i]);
 			}
-            Yii::trace(__METHOD__ . " (" . __LINE__ . "): encoded=".htmlentities($encoded), 'user');
+            Yii::trace(__METHOD__ . " (" . __LINE__ . "): encoded=".$encoded, 'user');
 			echo "<script type=\"text/javascript\">eval(unescape('" . $encoded . "'));</script>";
 		}
 
