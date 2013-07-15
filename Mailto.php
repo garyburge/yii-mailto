@@ -90,7 +90,6 @@
 			self::$_link_text = (strlen($link_text)) ? $link_text : $email;
 			self::$_encoding = $encoding;
 			self::$_options = $options;
-            Yii::trace(__METHOD__ . " (" . __LINE__ . "): self::_options=".print_r(self::$_options, true), 'user');
 		}
 
 		/**
@@ -103,7 +102,6 @@
 			if(!empty(self::$_options)){
 				$emailOptions = "?";
 				foreach(self::$_options as $k => $v){
-                    Yii::trace(__METHOD__ . " (" . __LINE__ . "): $k => $v", 'user');
 					switch($k){
 						case 'cc':
 						case 'bcc':
@@ -126,8 +124,6 @@
 					}
 				}
 				self::$_email .= rtrim($emailOptions, '&');
-                Yii::trace(__METHOD__ . " (" . __LINE__ . "): self::_linkOptions='".self::$_linkOptions."'", 'user');
-                Yii::trace(__METHOD__ . " (" . __LINE__ . "): self::_email='".self::$_email."'", 'user');
 			}
 		}
 
@@ -137,13 +133,11 @@
 		private static function javascript(){
             $encoded = '';
 			$encode_me = "document.write('" . self::getPlainTextLink() . "');";
-            Yii::trace(__METHOD__ . " (" . __LINE__ . "): encode_me=".$encode_me, 'user');
 			$len = strlen($encode_me);
 
 			for($i=0; $i<$len; $i++){
 				$encoded .= "%" . bin2hex($encode_me[$i]);
 			}
-            Yii::trace(__METHOD__ . " (" . __LINE__ . "): encoded=".$encoded, 'user');
 			echo "<script type=\"text/javascript\">eval(unescape('" . $encoded . "'));</script>";
 		}
 
